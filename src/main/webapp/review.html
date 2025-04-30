@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BLOG</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <style>
+		body{
+		    font-family: Arial, sans-serif;
+		    color: black;
+		    margin: 0px;
+		    background-image: url("bg3.jpg");
+		    background-color: #cccccc;
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		}
+        </style>
+    </head>
+    <body>
+<!-----------header--start------------------->
+    <div class="container">
+        <div class="navbar">
+            <img src="logo3.png">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#" class="active">Review</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="forecast.html">Forecast</a></li>
+            </ul>
+            <div class="search_plot">
+                <div class="search-bar">
+                    <input type="search" class="search" id="searchInput" placeholder="Search content" />
+                </div>
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="menu">
+                <a href="login.html"><i class="fa-regular fa-user"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-------------header--end-------------------------->
+    <div class="container-r">
+        <h1>Product Review and Rating</h1>
+        <form id="review-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="city" placeholder="Your City" required>
+            <div class="rating">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">&#9733;</label>
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">&#9733;</label>
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">&#9733;</label>
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">&#9733;</label>
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">&#9733;</label>
+            </div>
+            <textarea id="review-text" rows="5" placeholder="Write your review here..."></textarea>
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+        <div class="reviews" id="reviews">
+            <h2>Reviews</h2>
+        </div>
+    </div>
+
+    <script>
+        function submitReview() {
+            const reviewsContainer = document.getElementById('reviews');
+            const name = document.getElementById('name').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const reviewText = document.getElementById('review-text').value.trim();
+
+            if (!name || !city || !rating || !reviewText) {
+                alert('Please fill in all fields, including Name, Location, rating and review.');
+                return;
+            }
+
+            const reviewItem = document.createElement('div');
+            reviewItem.className = 'review-item';
+
+            const stars = '&#9733;'.repeat(rating.value) + '&#9734;'.repeat(5 - rating.value);
+            reviewItem.innerHTML = `
+                <h3>${name} from ${city}</h3>
+                <p>${stars}</p>
+                <p>${reviewText}</p>
+            `;
+
+            reviewsContainer.appendChild(reviewItem);
+            document.getElementById('review-form').reset();
+        }
+    </script>
+</body>
+</html>

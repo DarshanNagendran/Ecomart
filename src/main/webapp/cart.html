@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cart</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <script src="C:\Users\DARSHAN N\OneDrive\Project\JS\home.js"></script>
+        <style>
+		body{
+		    font-family: Arial, sans-serif;
+		    color: black;
+		    margin: 0px;
+		    background-image: url("bg3.jpg");
+		    background-color: #cccccc;
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		}
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <button onclick="window.history.back();"><img src="left-a.png"></button>
+            <h1>WISHLIST<i class="fa-solid fa-cart-shopping"></i></h1>
+        </div>
+        <div class="carts">
+            <div class="c">
+                <div id="cart-items"></div>    
+                <p>Total: ₹<span id="total-price">0</span><br> <a>Pay Now</a></p> 
+            </div>      
+        </div>
+                
+    <script>
+
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItemsContainer = document.getElementById('cart-items');
+            let totalPriceElement = document.getElementById('total-price');
+            let total = 0;
+            cartItemsContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                let cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <span>${item.name} - ₹${item.price}</span>
+                    <button onclick="removeFromCart(${index})">-</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                total += item.price;
+            });
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+        window.onload = displayCart;
+                </script>
+    </body>
+</html>

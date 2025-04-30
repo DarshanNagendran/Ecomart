@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOME</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <script src="C:\Users\DARSHAN N\OneDrive\Project\JS\home.js"></script>
+        <style>
+		body{
+		    font-family: Arial, sans-serif;
+		    color: black;
+		    margin: 0px;
+		    background-image: url("bg3.jpg");
+		    background-color: #cccccc;
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		}
+        </style>
+    </head>
+    <body>
+        <!-----------header--start------------------->
+        <div class="home">
+        <div class="container">
+            <div class="navbar">
+                <img src="logo3.png">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#" class="active">Forecast</a></li>
+                </ul>
+                <div class="search_plot">
+                    <div class="search-bar">
+                        <input type="search" class="search" >
+                    </div>
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+                <div class="cart">
+                    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+                <div class="menu">
+                    <a href="login.jsp"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-------------header--end-------------------------->
+        <div class="container-f">
+            <div class="chart">
+                <h2>Social Marketing</h2>
+                <canvas id="budgetChart"></canvas>
+            </div>
+            <div class="chart">
+                <h2>Customer Ratings</h2>
+                <canvas id="conversionChart"></canvas>
+            </div>
+            <div class="chart wide">
+                <h2>Purchase History</h2>
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx1 = document.getElementById('budgetChart').getContext('2d');
+            const budgetChart = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    datasets: [{
+                        label: 'Publicity',
+                        data: [50000, 75000, 100000, 120000, 150000, 200000],
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            const ctx2 = document.getElementById('conversionChart').getContext('2d');
+            const conversionChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    datasets: [{
+                        label: 'Conversion Rate (%)',
+                        data: [1.5, 2.0, 2.5, 3.0, 4.5, 5.5],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            const ctx3 = document.getElementById('revenueChart').getContext('2d');
+            const revenueChart = new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    datasets: [
+                        {
+                            label: 'Vegetables',
+                            data: [100000, 200000, 300000, 400000, 500000, 600000],
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                        },
+                        {
+                            label: ' Fruits',
+                            data: [80000, 150000, 200000, 300000, 400000, 550000],
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                        },
+                        {
+                            label: 'Vitamins',
+                            data: [60000, 120000, 180000, 250000, 350000, 500000],
+                            backgroundColor: 'rgba(255, 206, 86, 0.6)'
+                        },
+                        {
+                            label: 'Seeds',
+                            data: [40000, 100000, 150000, 220000, 300000, 450000],
+                            backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                        },
+                        {
+                            label: 'Nuts',
+                            data: [50000, 120000, 170000, 250000, 330000, 480000],
+                            backgroundColor: 'rgba(153, 102, 255, 0.6)'
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+   </body>
+</html> 

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SHOP</title>        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+        <script src="C:\Users\DARSHAN N\OneDrive\Project\JS\home.js"></script>
+        <style>
+		body{
+		    font-family: Arial, sans-serif;
+		    color: black;
+		    margin: 0px;
+		    background-image: url("bg3.jpg");
+		    background-color: #cccccc;
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		}
+        </style>
+    </head>
+    <body>
+        <div class="home">
+            <div class="container">
+                <div class="navbar">
+                    <img src="logo3.png">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="active">Shop</a></li>
+                        <li><a href="review.html">Review</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="forecast.html">Forecast</a></li>
+                    </ul>
+                    <div class="search_plot">
+                        <div class="search-bar">
+                            <input type="search" class="search" >
+                        </div>
+                        <div class="search-icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                    <div class="menu">
+                        <a href="login.jsp"><i class="fa-regular fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="vege">
+                <div class="view">
+                    <div class="a"><img src="v.png"/></div>
+                    <div class="b"><a href="#"><img src="view.png"/></a></div>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="tomato.png" />
+                        <h6>Fresh Tomato Hybrid</h6>
+                        <h4>₹40/-per KG</h4>
+                        <button onclick="addToCart('Tomato', 40,'tomato.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="cabbage.png"/>
+                        <h6>Green Cabbage</h6>
+                        <h4>₹40/-each piece</h4>
+                        <button onclick="addToCart('Cabbage', 40,'cabbage.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="chilli.png"/>
+                        <h6>Chilli Hot pepper</h6>
+                        <h4>₹70/- 100 gram</h4>
+                        <button onclick="addToCart('chilli', 70,'chilli.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="garlic.png"/>
+                        <h6>Dry Organic Clove Garlic</h6>
+                        <h4>250/-per KG</h4>
+                        <button onclick="addToCart('Garlic', 250,'garlic.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="brinjal.png"/>
+                        <h6>Brinjal Round(Gol Baigan)</h6>
+                        <h4>₹90/-per KG</h4>
+                        <button onclick="addToCart('Brinjal', 90,'brinjal.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="carrot.png"/>
+                        <h6>Carrot Orange F1 Hybrid</h6>
+                        <h4>₹110/-per KG</h4>
+                        <button onclick="addToCart('Carrot', 110,'carrot.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="ginger.png"/>
+                        <h6>Ginger Adrak Outdoor</h6>
+                        <h4>₹50/- 100gram</h4>
+                        <button onclick="addToCart('Ginger', 50,'ginger.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="corn.png"/>
+                        <h6>Desi Treat Fresh Corn</h6>
+                        <h4>₹20/-each piece</h4>
+                        <button onclick="addToCart('Corn', 20,'corn.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="cucumber.png"/>
+                        <h6>Agrey Cucumber</h6>
+                        <h4>₹10/-per piece</h4>
+                        <button onclick="addToCart('Cucumber', 10,'cucumber.png')">Buy Now</button>
+                    </div> 
+                    <div class="grid-item">
+                        <img src="onion.png"/>
+                        <h6>Onion(Pyaz)</h6>
+                        <h4>₹30/-per KG</h4>
+                        <button onclick="addToCart('Onion', 30,'onion.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="peas.png"/>
+                        <h6>Greeb Peas Hybrid</h6>
+                        <h4>₹75/- 100gram</h4>
+                        <button onclick="addToCart('Peas', 75,'peas.png')">Buy Now</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="pumpkin.png"/>
+                        <h6>Desi Pumpkin</h6>
+                        <h4>₹115/each piece</h4>
+                        <button onclick="addToCart('Pumpkin', 115,'pumpkin.png')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+<!------------------------------------fruits-------------------------------------------------------------------->
+            <div class="fru">
+                <div class="view">
+                    <div class="a"><img src="f.png"/></div>
+                    <div class="b"><a href="#"><img src="view.png"/></a></div>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="apple.jpg" />
+                        <h6>Kashmir Apple</h6>
+                        <h4>₹220/-per KG</h4>
+                        <button onclick="addToCart('Apple', 225,'apple.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="grapes.jpg"/>
+                        <h6>Bunch grape</h6>
+                        <h4>₹210/-per KG</h4>
+                        <button onclick="addToCart('Grapes', 350,'grapes.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="banana.jpg"/>
+                        <h6>Organic Banana</h6>
+                        <h4>₹55/-per KG</h4>
+                        <button onclick="addToCart('Banana', 30,'banana.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="jackfruit.jpg"/>
+                        <h6>All Season Jack Fruit</h6>
+                        <h4>₹180/-per KG</h4>
+                        <button onclick="addToCart('Jackfruit', 110,'jackfruit.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="kiwi.jpg"/>
+                        <h6>Oragin Kiwi Slices</h6>
+                        <h4>₹550/-per KG</h4>
+                        <button onclick="addToCart('Kiwi', 200,'kiwi.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="pine.jpg"/>
+                        <h6>Fresh Pineapple</h6>
+                        <h4>₹30/-per KG</h4>
+                        <button onclick="addToCart('Pine Apple', 90,'fruit/pine.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="watermelon.jpg"/>
+                        <h6>Flourish WaterMelon</h6>
+                        <h4>₹150/-per KG</h4>
+                        <button onclick="addToCart('Watermelon', 150,'watermelon.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="coco.png"/>
+                        <h6>Cool Coconut</h6>
+                        <h4>₹35/-each piece</h4>
+                        <button onclick="addToCart('Coconut', 25,'coco.png')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="promo.jpeg"/>
+                        <h6>Fresh Promegranate</h6>
+                        <h4>₹190/-per KG</h4>
+                        <button onclick="addToCart('Promogranate', 180,'promo.jpeg')">Add to Cart</button>
+                    </div> 
+                    <div class="grid-item">
+                        <img src="orange.jpg"/>
+                        <h6>Orange</h6>
+                        <h4>₹110/-per KG</h4>
+                        <button onclick="addToCart('Orange', 70,'orange.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="green apple.jpg"/>
+                        <h6>Organic Green Apple</h6>
+                        <h4>₹320/-per KG</h4>
+                        <button onclick="addToCart('Green Apple', 325,'green apple.jpg')">Add to Cart</button>
+                    </div>
+                    <div class="grid-item">
+                        <img src="mango.jpeg"/>
+                        <h6>Season Mango</h6>
+                        <h4>₹70/-per KG</h4>
+                        <button onclick="addToCart('Mango', 50,'mango.jpeg')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------------------------------------Vitamins-------------------------------------------------------------------->
+        <div class="vita">
+            <div class="view">
+                <div class="a"><img src="vi.png"/></div>
+                <div class="b"><a href="#"><img src="view.png"/></a></div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="soyabean.jpeg" />
+                    <h6>Dry Soyabean</h6>
+                    <h4>₹60/-per KG</h4>
+                    <button onclick="addToCart('Soyabean', 60,'soyabean.jpeg')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="salmon.png"/>
+                    <h6>Fresh Salmon</h6>
+                    <h4>₹550/-per KG</h4>
+                    <button onclick="addToCart('Salmon', 550,'soyabean.jpeg')">Add to Cart</button> 
+                </div>
+                <div class="grid-item">
+                    <img src="shrimp.jpeg"/>
+                    <h6>Season Shrimp</h6>
+                    <h4>₹300/-per KG</h4>
+                    <button onclick="addToCart('Shrimp', 300,'shrimp.jpeg')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="mushroom.png"/>
+                    <h6>Mushroom</h6>
+                    <h4>₹120/-per KG</h4>
+                    <button onclick="addToCart('Mushroom', 120,'mushroom.png')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="meat.jpeg"/>
+                    <h6>Fresh Meat</h6>
+                    <h4>₹850/-per KG</h4>
+                    <button onclick="addToCart('Meat', 850,'meat.jpeg')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="crab.png"/>
+                    <h6>Sea Crab</h6>
+                    <h4>₹70/-per KG</h4>
+                    <button onclick="addToCart('Crab', 420,'crab.png')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="yogurt.png"/>
+                    <h6>Rich Yogurt</h6>
+                    <h4>₹140/- 500ml</h4>
+                    <button onclick="addToCart('Yogurt', 140,'syogurt.png')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="egg.png"/>
+                    <h6>Egg</h6>
+                    <h4>₹7/-each</h4>
+                    <button onclick="addToCart('Egg', 7,'egg.png')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="chick.jpeg"/>
+                    <h6>Fresh Chicken</h6>
+                    <h4>₹250/-per KG</h4>
+                    <button onclick="addToCart('Chicken', 250,'chick.jpeg')">Add to Cart</button>
+                </div> 
+                <div class="grid-item">
+                    <img src="beef.png"/>
+                    <h6>Fresh Beef</h6>
+                    <h4>₹70/-per KG</h4>
+                    <button onclick="addToCart('Beef', 220,'beef.png')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="cheese.png"/>
+                    <h6>Cheese</h6>
+                    <h4>₹70/-per 100gm</h4>
+                    <button onclick="addToCart('Cheese', 70,'cheese.png')">Add to Cart</button>
+                </div>
+                <div class="grid-item">
+                    <img src="aspargus.png"/>
+                    <h6>Aspargus</h6>
+                    <h4>₹170/-per KG</h4>
+                    <button onclick="addToCart('Aspargus', 170,'aspargus.png')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    <!------------------------------------seeds and nuts-------------------------------------------------------------------->
+    <div class="fru">
+        <div class="view">
+            <div class="a"><img src="s.png"/></div>
+            <div class="b"><a href="#"><img src="view.png"/></a></div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="almond.png" />
+                <h6>Almond</h6>
+                <h4>₹875/-per KG</h4>
+                <button onclick="addToCart('Almond', 875,'almond.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="cashew.png"/>
+                <h6>Cashew</h6>
+                <h4>₹508/-per KG</h4>
+                <button onclick="addToCart('Cashew', 508,'cashew.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="hazelnut.png"/>
+                <h6>Hazelnut</h6>
+                <h4>₹1800/-per KG</h4>
+                <button onclick="addToCart('Hazelnut', 1800,'hazelnut.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="peanut.png"/>
+                <h6>Peanut</h6>
+                <h4>₹42/-per KG</h4>
+                <button onclick="addToCart('Peanut', 42,'peanut.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="acorn.png"/>
+                <h6>Acorn</h6>
+                <h4>₹499/-per KG</h4>
+                <button onclick="addToCart('Acorn', 499,'acorn.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="pistachio.png"/>
+                <h6>Pistachio</h6>
+                <h4>₹2475/-per KG</h4>
+                <button onclick="addToCart('Pistachio', 2475,'pistachio.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="walnut.png"/>
+                <h6>Walnut</h6>
+                <h4>₹410/-per KG</h4>
+                <button onclick="addToCart('Walnut', 410,'walnut.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="pecan.png"/>
+                <h6>Pecans</h6>
+                <h4>₹855/-per KG</h4>
+                <button onclick="addToCart('Pecans', 855,'pecan.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="pine_nuts.png"/>
+                <h6>Pine nuts</h6>
+                <h4>₹485/-per KG</h4>
+                <button onclick="addToCart('Pine nuts', 485,'pine_nuts.png')">Add to Cart</button>
+            </div> 
+            <div class="grid-item">
+                <img src="Tiger-Nuts.png"/>
+                <h6>Tiger Nuts</h6>
+                <h4>₹310/-per KG</h4>
+                <button onclick="addToCart('Tiger Nuts', 310,'Tiger-Nuts.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="candlenut.png"/>
+                <h6>Candlenut</h6>
+                <h4>₹53/-per KG</h4>
+                <button onclick="addToCart('Candlenut', 53,'candlenut.png')">Add to Cart</button>
+            </div>
+            <div class="grid-item">
+                <img src="chestnut.png"/>
+                <h6>Chestnut </h6>
+                <h4>₹330/-per KG</h4>
+                <button onclick="addToCart('Chestnut', 330,'chestnut.png')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+<script>
+    function addToCart(productName, productPrice, productImage) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cart.push({ name: productName, price: productPrice, image: productImage });
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(productName + " has been added to the cart.");
+        }
+</script>
+    </body>
+</html>
